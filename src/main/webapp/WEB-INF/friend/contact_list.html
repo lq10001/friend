@@ -26,14 +26,6 @@ var selected1 = "";
 				<a  href="${ctxPath}/contact/edit?friendid=${friendid!}" class="btn btn-default" data-id="dialog_contact_edit" data-toggle="dialog"
 					data-width="500" data-height="300"  data-mask="true" data-on-close="contact_refresh">添加</a>
 
-				<a  href="${ctxPath}/contact/edit?id={#bjui-selected}" class="btn btn-default" data-id="tab_contact_edit" data-toggle="dialog"
-					data-width="500" data-height="300"  data-mask="true" data-on-close="contact_refresh">编辑</a>
-
-				<a  href="${ctxPath}/contact/edit?action=3&id={#bjui-selected}" class="btn btn-default" data-id="tab_contact_edit" data-toggle="dialog"
-					data-width="500" data-height="300" data-mask="true" data-on-close="contact_refresh">复制添加</a>
-
-				<a href="${ctxPath}/contact/del?id={#bjui-selected}" class="btn btn-red" data-toggle="doajax"
-				   data-confirm-msg="确定要删除该行信息吗？" data-callback="contact_refresh">删</a>
 
 
 				&nbsp;&nbsp;
@@ -60,6 +52,8 @@ var selected1 = "";
 					<th>开始时间</th>
 
 					<th>结束时间</th>
+
+			<th width="80">操作</th>
 
 		</tr>
 		</thead>
@@ -107,6 +101,15 @@ var selected1 = "";
 			<td>
 				${obj.enddate!,'yyyy-MM-dd'}
             </td>
+
+				<td>
+					<a  href="${ctxPath}/contact/edit?id=${obj.id!}" class="btn btn-default" data-id="tab_contact_edit" data-toggle="dialog"
+						data-width="500" data-height="300"  data-mask="true" data-on-close="contact_refresh">编辑</a>
+
+					<a href="${ctxPath}/contact/del?id=${obj.id!}" class="btn btn-red" data-toggle="doajax"
+					   data-confirm-msg="确定要删除该行信息吗？" data-callback="contact_refresh">删</a>
+
+				</td>
             </tr>    
          <%}%>   
 

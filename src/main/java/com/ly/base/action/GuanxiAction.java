@@ -1,8 +1,10 @@
 package com.ly.base.action;
 
+import com.ly.Global;
 import com.ly.comm.Bjui;
 import com.ly.comm.Page;
 import com.ly.comm.ParseObj;
+import com.ly.sys.vo.User;
 import org.nutz.dao.Cnd;
 import org.nutz.dao.Dao;
 import org.nutz.ioc.loader.annotation.Inject;
@@ -13,6 +15,7 @@ import org.nutz.mvc.annotation.*;
 import org.nutz.mvc.filter.CheckSession;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 import java.util.List;
 import java.util.Map;
 
@@ -38,11 +41,13 @@ public class GuanxiAction {
     @Ok("beetl:/WEB-INF/base/guanxi_list.html")
     public void index(@Param("..")Page p,
                       @Param("..")Guanxi guanxi,
-                      HttpServletRequest request){
+                      HttpServletRequest request,
+                      HttpSession session){
 
+        User user = (User) session.getAttribute(Global.LOGIN_USER);
+        guanxi.setUserId(user.getId());
         Cnd c = new ParseObj(guanxi).getCnd();
-        if (c == null || c.equals(""))
-        {
+        if (c == null || c.equals("")){
             p.setRecordCount(guanxiService.listCount(c));
             request.setAttribute("list_obj", guanxiService.queryCache(c,p));
         }else{
@@ -67,9 +72,12 @@ public class GuanxiAction {
 
     @At
     @Ok("json")
-    public Map<String,String> save( @Param("..")Guanxi guanxi){
+    public Map<String,String> save( @Param("..")Guanxi guanxi,
+                                    HttpSession session ){
         Object rtnObject;
         if (guanxi.getId() == null || guanxi.getId() == 0) {
+            User user = (User) session.getAttribute(Global.LOGIN_USER);
+            guanxi.setUserId(user.getId());
             rtnObject = guanxiService.dao().insert(guanxi);
         }else{
             rtnObject = guanxiService.dao().updateIgnoreNull(guanxi);

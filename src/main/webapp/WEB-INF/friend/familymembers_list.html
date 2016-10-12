@@ -22,17 +22,6 @@ var selected1 = "";
 
 				<a  href="${ctxPath}/familymembers/edit?friendid=${friendid!}" class="btn btn-default" data-id="dialog_familymembers_edit" data-toggle="dialog"
 					data-width="500" data-height="300"  data-mask="true" data-on-close="family_refresh">添加</a>
-
-				<a  href="${ctxPath}/familymembers/edit?id={#bjui-selected}" class="btn btn-default" data-id="tab_familymembers_edit" data-toggle="dialog"
-					data-width="500" data-height="300"  data-mask="true" data-on-close="family_refresh">编辑</a>
-
-				<a  href="${ctxPath}/familymembers/edit?action=3&id={#bjui-selected}" class="btn btn-default" data-id="tab_familymembers_edit" data-toggle="dialog"
-					data-width="500" data-height="300" data-mask="true" data-on-close="family_refresh">复制添加</a>
-
-				<a href="${ctxPath}/familymembers/del?id={#bjui-selected}" class="btn btn-red" data-toggle="doajax"
-				   data-confirm-msg="确定要删除该行信息吗？" data-callback="family_refresh">删</a>
-
-
 				&nbsp;&nbsp;
 			</div>
 
@@ -55,6 +44,8 @@ var selected1 = "";
 					<th>电话</th>
 
 					<th>政治面貌</th>
+
+			<th width="80">操作</th>
 
 		</tr>
 		</thead>
@@ -100,6 +91,15 @@ var selected1 = "";
 				 ${obj.politicalstatus!}
 			</td>
 
+				<td>
+
+					<a  href="${ctxPath}/familymembers/edit?id=${obj.id!}" class="btn btn-default" data-id="tab_familymembers_edit" data-toggle="dialog"
+						data-width="500" data-height="300"  data-mask="true" data-on-close="family_refresh">编辑</a>
+
+					<a href="${ctxPath}/familymembers/del?id=${obj.id!}" class="btn btn-red" data-toggle="doajax"
+					   data-confirm-msg="确定要删除该行信息吗？" data-callback="family_refresh">删</a>
+
+				</td>
 
             </tr>    
          <%}%>   

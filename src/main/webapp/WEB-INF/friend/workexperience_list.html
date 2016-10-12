@@ -23,16 +23,6 @@ var selected1 = "";
 				<a  href="${ctxPath}/workexperience/edit?friendid=${friendid!}" class="btn btn-default" data-id="dialog_workexperience_edit" data-toggle="dialog"
 					data-width="500" data-height="300"  data-mask="true" data-on-close="gzjl_refresh">添加</a>
 
-				<a  href="${ctxPath}/workexperience/edit?id={#bjui-selected}" class="btn btn-default" data-id="tab_workexperience_edit" data-toggle="dialog"
-					data-width="500" data-height="300"  data-mask="true" data-on-close="gzjl_refresh">编辑</a>
-
-				<a  href="${ctxPath}/workexperience/edit?action=3&id={#bjui-selected}" class="btn btn-default" data-id="tab_workexperience_edit" data-toggle="dialog"
-					data-width="500" data-height="300" data-mask="true" data-on-close="gzjl_refresh">复制添加</a>
-
-				<a href="${ctxPath}/workexperience/del?id={#bjui-selected}" class="btn btn-red" data-toggle="doajax"
-				   data-confirm-msg="确定要删除该行信息吗？" data-callback="gzjl_refresh">删</a>
-
-
 				&nbsp;&nbsp;
 			</div>
 
@@ -56,6 +46,9 @@ var selected1 = "";
 
 					<th>离职时间</th>
 
+					<th width="80">操作</th>
+
+
 		</tr>
 		</thead>
 		<tbody>
@@ -64,7 +57,7 @@ var selected1 = "";
         for(obj in list_obj){
         %>
 
-            <tr data-id="${obj.id}">
+            <tr>
 
 
 
@@ -95,6 +88,17 @@ var selected1 = "";
 			<td>
 				${obj.enddate!,'yyyy-MM-dd'}
             </td>
+
+				<td>
+
+					<a  href="${ctxPath}/workexperience/edit?id=${obj.id}" class="btn btn-default" data-id="tab_workexperience_edit" data-toggle="dialog"
+						data-width="500" data-height="300"  data-mask="true" data-on-close="gzjl_refresh">编辑</a>
+
+					<a href="${ctxPath}/workexperience/del?id=${obj.id}" class="btn btn-red" data-toggle="doajax"
+					   data-confirm-msg="确定要删除该行信息吗？" data-callback="gzjl_refresh">删</a>
+
+				</td>
+
             </tr>    
          <%}%>   
 

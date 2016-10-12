@@ -103,6 +103,13 @@ public class Friend{
 	@Column
 	private String memo;
 
+	@Column
+
+	private Long userid;
+
+	@Column
+	private String qq;
+
 
 	public Long getId() {
 		return id;
@@ -350,5 +357,21 @@ public class Friend{
 
 	public void setMemo(String memo) {
 		this.memo = memo;
+	}
+
+	public Long getUserid() {
+		return userid;
+	}
+
+	public void setUserid(Long userid) {
+		this.userid = userid;
+	}
+
+	public String getQq() {
+		return qq;
+	}
+
+	public void setQq(String qq) {
+		this.qq = qq;
 	}
 }

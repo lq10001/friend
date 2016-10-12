@@ -23,10 +23,7 @@ var selected1 = "";
 									  <tbody>
 
 									  <tr>
-										  <td>
-											  <label for="j_no" class="control-label x85">编号</label>
-											  <input type="text" name="no" id="j_no" value="${friend.no!}" data-rule="" size="20">
-										  </td>
+
 										  <td>
 											  <label for="j_cnname" class="control-label x85">中文名</label>
 											  <input type="text" name="cnname" id="j_cnname" value="${friend.cnname!}" data-rule="" size="20">
@@ -35,9 +32,17 @@ var selected1 = "";
 											  <label for="j_name" class="control-label x85">姓名</label>
 											  <input type="text" name="name" id="j_name" value="${friend.name!}" data-rule="" size="20">
 										  </td>
+
+										  <td>
+											  <label for="j_phone" class="control-label x85">联系电话</label>
+											  <input type="text" name="phone" id="j_phone" value="${friend.phone!}" data-rule="" size="20">
+										  </td>
+
+
 									  </tr>
 
 									  <tr>
+
 										  <td>
 											  <label for="j_guanxi" class="control-label x85">关系</label>
 											  <select id="j_guanxi" name="guanxiid" data-toggle="selectpicker" data-width="200">
@@ -56,6 +61,7 @@ var selected1 = "";
 												  %>
 											  </select>
 										  </td>
+
 
 										  <td>
 											  <label for="j_xinyong" class="control-label x85">信用评级</label>
@@ -117,16 +123,56 @@ var selected1 = "";
 												  %>
 											  </select>
 										  </td>
-										  <td>
-											  <label for="j_age" class="control-label x85">年龄</label>
-											  <input type="text" name="age" id="j_age" value="${friend.age!}" data-rule="" size="20">
-										  </td>
 
 
 										  <td>
-											  <label for="j_nation" class="control-label x85">名族</label>
-											  <input type="text" name="nation" id="j_nation" value="${friend.nation!}" data-rule="" size="20">
+											  <label for="j_birthday" class="control-label x85">出生日期</label>
+
+											  <input type="text" name="birthday" id="j_birthday" value="${friend.birthday!,'yyyy-MM-dd'}" data-toggle="datepicker" data-rule="date" size="20">
 										  </td>
+
+										  <td>
+											  <label for="j_marital" class="control-label x85">婚姻状况</label>
+											  <select id="j_marital" name="marital" data-toggle="selectpicker" data-width="200">
+												  <%
+												  selected1 = "";
+												  for(obj in maritalList!)
+												  {
+												  if(isEmpty(friend.maritalid) || obj.id != friend.maritalid)
+												  {
+												  selected1="";
+												  }else{
+												  selected1 = "selected='selected'";
+												  }
+												  println("<option value='" + obj.id + "'"+selected1+">"+obj.name+"</option>");
+												  }
+												  %>
+											  </select>
+										  </td>
+
+
+									  </tr>
+
+									  <tr>
+
+										  <td>
+											  <label for="j_qq" class="control-label x85">QQ</label>
+											  <input type="text" name="qq" id="j_qq" value="${friend.qq!}" data-rule="" size="20">
+										  </td>
+
+										  <td>
+											  <label for="j_email" class="control-label x85">Email</label>
+											  <input type="text" name="email" id="j_email" value="${friend.email!}" data-rule="" size="20">
+										  </td>
+
+										  <td>
+											  <label for="j_address" class="control-label x85">现居住地址</label>
+											  <input type="text" name="address" id="j_address" value="${friend.address!}" data-rule="" size="20">
+										  </td>
+
+
+
+
 
 									  </tr>
 
@@ -151,9 +197,11 @@ var selected1 = "";
 										  </td>
 
 										  <td>
-											  <label for="j_hobby" class="control-label x85">兴趣爱好</label>
-											  <input type="text" name="hobby" id="j_hobby" value="${friend.hobby!}" data-rule="" size="20">
+											  <label for="j_nation" class="control-label x85">名族</label>
+											  <input type="text" name="nation" id="j_nation" value="${friend.nation!}" data-rule="" size="20">
 										  </td>
+
+
 
 										  <td>
 											  <label for="j_health" class="control-label x85">健康状况</label>
@@ -181,57 +229,6 @@ var selected1 = "";
 												  for(obj in bloodList!)
 												  {
 												  if(isEmpty(friend.bloodid) || obj.id != friend.bloodid)
-												  {
-												  selected1="";
-												  }else{
-												  selected1 = "selected='selected'";
-												  }
-												  println("<option value='" + obj.id + "'"+selected1+">"+obj.name+"</option>");
-												  }
-												  %>
-											  </select>
-										  </td>
-									  </tr>
-
-
-
-
-									  <tr>
-										  <td>
-											  <label for="j_address" class="control-label x85">现居住地址</label>
-											  <input type="text" name="address" id="j_address" value="${friend.address!}" data-rule="" size="20">
-										  </td>
-
-										  <td>
-											  <label for="j_phone" class="control-label x85">联系电话</label>
-											  <input type="text" name="phone" id="j_phone" value="${friend.phone!}" data-rule="" size="20">
-										  </td>
-
-										  <td>
-											  <label for="j_phone2" class="control-label x85">紧急联系人电话</label>
-											  <input type="text" name="phone2" id="j_phone2" value="${friend.phone2!}" data-rule="" size="20">
-										  </td>
-									  </tr>
-
-									  <tr>
-										  <td>
-											  <label for="j_linkman" class="control-label x85">紧急联系人</label>
-											  <input type="text" name="linkman" id="j_linkman" value="${friend.linkman!}" data-rule="" size="20">
-										  </td>
-
-										  <td>
-											  <label for="j_email" class="control-label x85">Email</label>
-											  <input type="text" name="email" id="j_email" value="${friend.email!}" data-rule="" size="20">
-										  </td>
-
-										  <td>
-											  <label for="j_marital" class="control-label x85">婚姻状况</label>
-											  <select id="j_marital" name="marital" data-toggle="selectpicker" data-width="200">
-												  <%
-												  selected1 = "";
-												  for(obj in maritalList!)
-												  {
-												  if(isEmpty(friend.maritalid) || obj.id != friend.maritalid)
 												  {
 												  selected1="";
 												  }else{
@@ -289,16 +286,15 @@ var selected1 = "";
 										  </td>
 
 										  <td>
-											  <label for="j_birthday" class="control-label x85">出生日期</label>
-
-											  <input type="text" name="birthday" id="j_birthday" value="${friend.birthday!,'yyyy-MM-dd'}" data-toggle="datepicker" data-rule="date" size="20">
+											  <label for="j_hobby" class="control-label x85">兴趣爱好</label>
+											  <input type="text" name="hobby" id="j_hobby" value="${friend.hobby!}" data-rule="" size="20">
 										  </td>
 									  </tr>
 
 									  <tr>
 										  <td colspan="3">
 											  <label for="j_xinge" class="control-label x85">性格描述</label>
-											  <input type="text" name="xinge" id="j_xinge" value="${friend.xinge!}" data-rule="" size="20">
+											  <input type="text" name="xinge" id="j_xinge" value="${friend.xinge!}" data-rule="" size="50">
 										  </td>
 									  </tr>
 
@@ -306,7 +302,7 @@ var selected1 = "";
 
 										  <td colspan="3">
 											  <label for="j_memo" class="control-label x85">备注</label>
-											  <input type="text" name="memo" id="j_memo" value="${friend.memo!}" data-rule="" size="20">
+											  <input type="text" name="memo" id="j_memo" value="${friend.memo!}" data-rule="" size="50">
 										  </td>
 									  </tr>
 

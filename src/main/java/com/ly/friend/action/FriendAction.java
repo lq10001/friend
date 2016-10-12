@@ -1,9 +1,14 @@
 package com.ly.friend.action;
 
+import com.ly.Global;
 import com.ly.base.service.*;
 import com.ly.comm.Bjui;
 import com.ly.comm.Page;
 import com.ly.comm.ParseObj;
+import com.ly.friend.service.FriendService;
+import com.ly.friend.vo.Friend;
+import com.ly.sys.vo.User;
+import net.sf.ehcache.CacheManager;
 import org.nutz.dao.Cnd;
 import org.nutz.ioc.loader.annotation.Inject;
 import org.nutz.ioc.loader.annotation.IocBean;
@@ -13,13 +18,8 @@ import org.nutz.mvc.annotation.*;
 import org.nutz.mvc.filter.CheckSession;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 import java.util.Map;
-
-import net.sf.ehcache.CacheManager;
-
-
-import com.ly.friend.vo.Friend;
-import com.ly.friend.service.FriendService;
 
 
 @IocBean
@@ -63,7 +63,11 @@ public class FriendAction {
     @Ok("beetl:/WEB-INF/friend/friend_list.html")
     public void index(@Param("..")Page p,
                       @Param("..")Friend friend,
-                      HttpServletRequest request){
+                      HttpServletRequest request,
+                      HttpSession session){
+
+        User user = (User) session.getAttribute(Global.LOGIN_USER);
+        friend.setUserid(user.getId());
 
         Cnd c = new ParseObj(friend).getCnd();
         if (c == null || c.equals(""))
@@ -107,9 +111,12 @@ public class FriendAction {
 
     @At
     @Ok("json")
-    public Map<String,String> save( @Param("..")Friend friend){
+    public Map<String,String> save( @Param("..")Friend friend,
+                                    HttpSession session){
         Object rtnObject;
         if (friend.getId() == null || friend.getId() == 0) {
+            User user = (User) session.getAttribute(Global.LOGIN_USER);
+            friend.setUserid(user.getId());
             rtnObject = friendService.dao().insert(friend);
         }else{
             rtnObject = friendService.dao().updateIgnoreNull(friend);

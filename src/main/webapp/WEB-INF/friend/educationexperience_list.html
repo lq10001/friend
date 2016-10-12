@@ -23,14 +23,6 @@ var selected1 = "";
 				<a  href="${ctxPath}/educationexperience/edit?friendid=${friendid!}" class="btn btn-default" data-id="dialog_educationexperience_edit" data-toggle="dialog"
 					data-width="500" data-height="300"  data-mask="true" data-on-close="jyjl_refresh">添加</a>
 
-				<a  href="${ctxPath}/educationexperience/edit?id={#bjui-selected}" class="btn btn-default" data-id="tab_educationexperience_edit" data-toggle="dialog"
-					data-width="500" data-height="300"  data-mask="true" data-on-close="jyjl_refresh">编辑</a>
-
-				<a  href="${ctxPath}/educationexperience/edit?action=3&id={#bjui-selected}" class="btn btn-default" data-id="tab_educationexperience_edit" data-toggle="dialog"
-					data-width="500" data-height="300" data-mask="true" data-on-close="jyjl_refresh">复制添加</a>
-
-				<a href="${ctxPath}/educationexperience/del?id={#bjui-selected}" class="btn btn-red" data-toggle="doajax"
-				   data-confirm-msg="确定要删除该行信息吗？" data-callback="jyjl_refresh">删</a>
 
 
 				&nbsp;&nbsp;
@@ -57,6 +49,8 @@ var selected1 = "";
 					<th>毕业时间</th>
 
 					<th>入学时间</th>
+
+			<th width="80">操作</th>
 
 		</tr>
 		</thead>
@@ -104,6 +98,16 @@ var selected1 = "";
 			<td>
 				${obj.startdate!,'yyyy-MM-dd'}
             </td>
+
+				<td>
+					<a  href="${ctxPath}/educationexperience/edit?id=${obj.id!}" class="btn btn-default" data-id="tab_educationexperience_edit" data-toggle="dialog"
+						data-width="500" data-height="300"  data-mask="true" data-on-close="jyjl_refresh">编辑</a>
+
+					<a href="${ctxPath}/educationexperience/del?id=${obj.id!}" class="btn btn-red" data-toggle="doajax"
+					   data-confirm-msg="确定要删除该行信息吗？" data-callback="jyjl_refresh">删</a>
+
+				</td>
+
             </tr>    
          <%}%>   
 

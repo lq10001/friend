@@ -23,16 +23,6 @@ var selected1 = "";
 				<a  href="${ctxPath}/xmjinyan/edit?friendid=${friendid!}" class="btn btn-default" data-id="dialog_xmjinyan_edit" data-toggle="dialog"
 					data-width="500" data-height="300"  data-mask="true" data-on-close="xmjl_refresh">添加</a>
 
-				<a  href="${ctxPath}/xmjinyan/edit?id={#bjui-selected}" class="btn btn-default" data-id="tab_xmjinyan_edit" data-toggle="dialog"
-					data-width="500" data-height="300"  data-mask="true" data-on-close="xmjl_refresh">编辑</a>
-
-				<a  href="${ctxPath}/xmjinyan/edit?action=3&id={#bjui-selected}" class="btn btn-default" data-id="tab_xmjinyan_edit" data-toggle="dialog"
-					data-width="500" data-height="300" data-mask="true" data-on-close="xmjl_refresh">复制添加</a>
-
-				<a href="${ctxPath}/xmjinyan/del?id={#bjui-selected}" class="btn btn-red" data-toggle="doajax"
-				   data-confirm-msg="确定要删除该行信息吗？" data-callback="xmjl_refresh">删</a>
-
-
 				&nbsp;&nbsp;
 			</div>
 
@@ -61,6 +51,8 @@ var selected1 = "";
 					<th>项目链接</th>
 
 					<th>备注</th>
+
+			<th width="80">操作</th>
 
 		</tr>
 		</thead>
@@ -121,6 +113,15 @@ var selected1 = "";
 				 ${obj.memo!}
 			</td>
 
+				<td>
+					<a  href="${ctxPath}/xmjinyan/edit?id=${obj.id!}" class="btn btn-default" data-id="tab_xmjinyan_edit" data-toggle="dialog"
+						data-width="500" data-height="300"  data-mask="true" data-on-close="xmjl_refresh">编辑</a>
+
+					<a href="${ctxPath}/xmjinyan/del?id=${obj.id!}" class="btn btn-red" data-toggle="doajax"
+					   data-confirm-msg="确定要删除该行信息吗？" data-callback="xmjl_refresh">删</a>
+
+
+				</td>
 
             </tr>    
          <%}%>   

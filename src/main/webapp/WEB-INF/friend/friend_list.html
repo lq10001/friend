@@ -12,16 +12,15 @@ var selected1 = "";
 
 		<div class="bjui-searchBar">
 
-				<label for="j_no">编号：</label>
-				<input type="text"  id="j_no" name="no" value="${employee.no!}" class="form-control" size="10"/>
 
 				<label for="j_cnname">中文名：</label>
 				<input type="text"  id="j_cnname" name="cnname" value="${employee.cnname!}" class="form-control" size="10"/>
 
-				<label for="j_name">姓名：</label>
+				<label for="j_name">英文名：</label>
 				<input type="text"  id="j_name" name="name" value="${employee.name!}" class="form-control" size="10"/>
 
 				<label for="j_phone">联系电话：</label>
+
 				<input type="text"  id="j_phone" name="phone" value="${employee.phone!}" class="form-control" size="10"/>
 				<label for="j_educationid">学历：</label>
 
@@ -73,11 +72,6 @@ var selected1 = "";
 		<thead>
 		<tr>
 
-
-					<th width="50">编号</th>
-
-					<th>编号</th>
-
 					<th>中文名</th>
 
 					<th>姓名</th>
@@ -90,9 +84,9 @@ var selected1 = "";
 
 					<th>联系电话</th>
 
-					<th>紧急联系人电话</th>
-
 					<th>联系频率</th>
+
+					<th>生日-年龄</th>
 
 					<th>学历</th>
 
@@ -105,22 +99,6 @@ var selected1 = "";
         %>
 
             <tr data-id="${obj.id}">
-
-
-
-			<td>
-				 ${obj.id!}
-			</td>
-
-
-
-
-			<td>
-				 ${obj.no!}
-			</td>
-
-
-
 
 			<td>
 				 ${obj.cnname!}
@@ -186,12 +164,6 @@ var selected1 = "";
 
 
 
-
-			<td>
-				 ${obj.phone2!}
-			</td>
-
-
 			<td>
 
 				<%
@@ -205,6 +177,10 @@ var selected1 = "";
 				}
 				%>
 			</td>
+
+				<td>
+					${obj.age!}
+				</td>
 
 			<td>
 
