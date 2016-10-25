@@ -1,11 +1,11 @@
 
-<form id="pagerForm" method="post" action="${ctxPath}/procreate">
+<form id="pagerForm" method="post" action="/procreate">
     <input type="hidden" name="pageNum" value="${page.pageNum}" />
     <input type="hidden" name="numPerPage" value="${page.pageSize}" />
 </form>
 
 <div class="pageHeader">
-	<form onsubmit="return navTabSearch(this);" action="${ctxPath}/procreate" rel="pagerForm" method="post">
+	<form onsubmit="return navTabSearch(this);" action="/procreate" rel="pagerForm" method="post">
 	<div class="searchBar">
 		<table class="searchContent">
 			<tr>
@@ -30,9 +30,9 @@
 <div class="pageContent">
 	<div class="panelBar">
 		<ul class="toolBar">
-			<l1><a class="add" href="${ctxPath}/procreate/edit" target="dialog" rel="dlg_form" mask="true" title="添加菜单" width="520" height="360"><span>添加</span></a></l1>
-			<li><a class="delete" href="${ctxPath}/procreate/del?id={sid}" target="ajaxTodo" title="确定要删除吗?"><span>删除</span></a></li>
-            <l1><a class="edit" href="${ctxPath}/procreate/edit?id={sid}" target="dialog" rel="dlg_form" mask="true" title="修改菜单" width="520" height="360"><span>修改</span></a></l1>
+			<l1><a class="add" href="/procreate/edit" target="dialog" rel="dlg_form" mask="true" title="添加菜单" width="520" height="360"><span>添加</span></a></l1>
+			<li><a class="delete" href="/procreate/del?id={sid}" target="ajaxTodo" title="确定要删除吗?"><span>删除</span></a></li>
+            <l1><a class="edit" href="/procreate/edit?id={sid}" target="dialog" rel="dlg_form" mask="true" title="修改菜单" width="520" height="360"><span>修改</span></a></l1>
 		
 			<li class="line">line</li>
 		</ul>

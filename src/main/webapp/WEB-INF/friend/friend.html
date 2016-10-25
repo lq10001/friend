@@ -14,7 +14,7 @@ var selected1 = "";
 								  <h4 class="panel-title"><i class="fa fa-pie-chart fa-fw"></i>基本信息</h4>
 							  </div>
 							  <div class="panel-body" style="padding: 0px">
-								  <form method="post" action="${ctxPath}/friend/save" class="pageForm" data-toggle="validate">
+								  <form method="post" action="/friend/save" class="pageForm" data-toggle="validate">
 
 									  <input type="hidden" name="id" value="${friend.id!}">
 
@@ -354,37 +354,37 @@ var selected1 = "";
 
 									  <!--交往记录-->
 									  <div class="tab-pane active in"  id="contact">
-										  <div data-url="${ctxPath}/contact?friendid=${friend.id!}" data-toggle="autoajaxload">
+										  <div data-url="/contact?friendid=${friend.id!}" data-toggle="autoajaxload">
 										  </div>
 									  </div>
 
 									  <!--工作经历-->
 									  <div class="tab-pane"  id="workexperience">
-										  <div data-url="${ctxPath}/workexperience?friendid=${friend.id!}" data-toggle="autoajaxload">
+										  <div data-url="/workexperience?friendid=${friend.id!}" data-toggle="autoajaxload">
 										  </div>
 									  </div>
 
 									  <!--教育经历-->
 									  <div class="tab-pane"  id="educationexperience">
-										  <div data-url="${ctxPath}/educationexperience?friendid=${friend.id!}" data-toggle="autoajaxload">
+										  <div data-url="/educationexperience?friendid=${friend.id!}" data-toggle="autoajaxload">
 										  </div>
 									  </div>
 
 									  <!--项目经历-->
 									  <div class="tab-pane"  id="xmjinyan">
-										  <div data-url="${ctxPath}/xmjinyan?friendid=${friend.id!}" data-toggle="autoajaxload">
+										  <div data-url="/xmjinyan?friendid=${friend.id!}" data-toggle="autoajaxload">
 										  </div>
 									  </div>
 
 									  <!--技能评价-->
 									  <div class="tab-pane"  id="jinengpj">
-										  <div data-url="${ctxPath}/jinengpj?friendid=${friend.id!}" data-toggle="autoajaxload">
+										  <div data-url="/jinengpj?friendid=${friend.id!}" data-toggle="autoajaxload">
 										  </div>
 									  </div>
 
 									  <!--家庭成员-->
 									  <div class="tab-pane"  id="familymembers">
-										  <div data-url="${ctxPath}/familymembers?friendid=${friend.id!}" data-toggle="autoajaxload">
+										  <div data-url="/familymembers?friendid=${friend.id!}" data-toggle="autoajaxload">
 										  </div>
 									  </div>
 

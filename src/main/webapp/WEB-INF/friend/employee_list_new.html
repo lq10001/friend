@@ -1,11 +1,11 @@
 
-<form id="pagerForm" method="post" action="${ctxPath}/friend">
+<form id="pagerForm" method="post" action="/friend">
     <input type="hidden" name="pageNum" value="${page.pageNum}" />
     <input type="hidden" name="numPerPage" value="${page.pageSize}" />
 </form>
 
 <div class="pageHeader">
-	<form onsubmit="return navTabSearch(this);" action="${ctxPath}/friend" rel="pagerForm" method="post">
+	<form onsubmit="return navTabSearch(this);" action="/friend" rel="pagerForm" method="post">
 	<div class="searchBar">
 		<table class="searchContent">
 			<tr>
@@ -50,14 +50,14 @@
 <div class="pageContent">
 	<div class="panelBar">
 		<ul class="toolBar">
-			<l1><a class="add" href="${ctxPath}/friend/edit" target="navTab" title="添加菜单"><span>添加</span></a></l1>
-			<li><a class="delete" href="${ctxPath}/friend/del?id={sid}" target="ajaxTodo" title="确定要删除吗?"><span>删除</span></a></li>
-            <l1><a class="edit" href="${ctxPath}/friend/edit?id={sid}" target="navTab" title="修改信息"><span>修改</span></a></l1>
+			<l1><a class="add" href="/friend/edit" target="navTab" title="添加菜单"><span>添加</span></a></l1>
+			<li><a class="delete" href="/friend/del?id={sid}" target="ajaxTodo" title="确定要删除吗?"><span>删除</span></a></li>
+            <l1><a class="edit" href="/friend/edit?id={sid}" target="navTab" title="修改信息"><span>修改</span></a></l1>
 		
 			<li class="line">line</li>
 
-            <l1><a class="edit" href="${ctxPath}/friend/edit?id={sid}" target="navTab" title="调岗管理"><span>调岗管理</span></a></l1>
-            <l1><a class="add" href="${ctxPath}/exitinfo/add?friendid={sid}" target="dialog" rel="dlg_form" mask="true" title="离职管理" width="520" height="360"><span>离职管理</span></a></l1>
+            <l1><a class="edit" href="/friend/edit?id={sid}" target="navTab" title="调岗管理"><span>调岗管理</span></a></l1>
+            <l1><a class="add" href="/exitinfo/add?friendid={sid}" target="dialog" rel="dlg_form" mask="true" title="离职管理" width="520" height="360"><span>离职管理</span></a></l1>
 
             <li class="line">line</li>
 

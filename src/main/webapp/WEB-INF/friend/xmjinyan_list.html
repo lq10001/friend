@@ -4,7 +4,7 @@ var selected1 = "";
 %>
 
 <div class="bjui-pageHeader">
-	<form id="pagerForm" data-toggle="ajaxsearch" action="${ctxPath}/xmjinyan?friendid=${friendid!}" method="post">
+	<form id="pagerForm" data-toggle="ajaxsearch" action="/xmjinyan?friendid=${friendid!}" method="post">
 
 
 		<input type="hidden" name="pageSize" value="${page.pageSize}" />
@@ -20,7 +20,7 @@ var selected1 = "";
 
 			<div class="pull-right">
 
-				<a  href="${ctxPath}/xmjinyan/edit?friendid=${friendid!}" class="btn btn-default" data-id="dialog_xmjinyan_edit" data-toggle="dialog"
+				<a  href="/xmjinyan/edit?friendid=${friendid!}" class="btn btn-default" data-id="dialog_xmjinyan_edit" data-toggle="dialog"
 					data-width="500" data-height="300"  data-mask="true" data-on-close="xmjl_refresh">添加</a>
 
 				&nbsp;&nbsp;
@@ -114,10 +114,10 @@ var selected1 = "";
 			</td>
 
 				<td>
-					<a  href="${ctxPath}/xmjinyan/edit?id=${obj.id!}" class="btn btn-default" data-id="tab_xmjinyan_edit" data-toggle="dialog"
+					<a  href="/xmjinyan/edit?id=${obj.id!}" class="btn btn-default" data-id="tab_xmjinyan_edit" data-toggle="dialog"
 						data-width="500" data-height="300"  data-mask="true" data-on-close="xmjl_refresh">编辑</a>
 
-					<a href="${ctxPath}/xmjinyan/del?id=${obj.id!}" class="btn btn-red" data-toggle="doajax"
+					<a href="/xmjinyan/del?id=${obj.id!}" class="btn btn-red" data-toggle="doajax"
 					   data-confirm-msg="确定要删除该行信息吗？" data-callback="xmjl_refresh">删</a>
 
 

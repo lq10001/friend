@@ -4,7 +4,7 @@ var selected1 = "";
 %>
 
 <div class="bjui-pageHeader">
-	<form id="pagerForm" data-toggle="ajaxsearch" action="${ctxPath}/contact?friendid=${friendid!}" method="post">
+	<form id="pagerForm" data-toggle="ajaxsearch" action="/contact?friendid=${friendid!}" method="post">
 
 
 		<input type="hidden" name="pageSize" value="${page.pageSize}" />
@@ -23,7 +23,7 @@ var selected1 = "";
 
 			<div class="pull-right">
 
-				<a  href="${ctxPath}/contact/edit?friendid=${friendid!}" class="btn btn-default" data-id="dialog_contact_edit" data-toggle="dialog"
+				<a  href="/contact/edit?friendid=${friendid!}" class="btn btn-default" data-id="dialog_contact_edit" data-toggle="dialog"
 					data-width="500" data-height="300"  data-mask="true" data-on-close="contact_refresh">添加</a>
 
 
@@ -103,10 +103,10 @@ var selected1 = "";
             </td>
 
 				<td>
-					<a  href="${ctxPath}/contact/edit?id=${obj.id!}" class="btn btn-default" data-id="tab_contact_edit" data-toggle="dialog"
+					<a  href="/contact/edit?id=${obj.id!}" class="btn btn-default" data-id="tab_contact_edit" data-toggle="dialog"
 						data-width="500" data-height="300"  data-mask="true" data-on-close="contact_refresh">编辑</a>
 
-					<a href="${ctxPath}/contact/del?id=${obj.id!}" class="btn btn-red" data-toggle="doajax"
+					<a href="/contact/del?id=${obj.id!}" class="btn btn-red" data-toggle="doajax"
 					   data-confirm-msg="确定要删除该行信息吗？" data-callback="contact_refresh">删</a>
 
 				</td>

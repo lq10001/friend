@@ -4,7 +4,7 @@ var selected1 = "";
 %>
 
 <div class="bjui-pageHeader">
-	<form id="pagerForm" data-toggle="ajaxsearch" action="${ctxPath}/educationexperience?friendid=${friendid!}" method="post">
+	<form id="pagerForm" data-toggle="ajaxsearch" action="/educationexperience?friendid=${friendid!}" method="post">
 
 
 		<input type="hidden" name="pageSize" value="${page.pageSize}" />
@@ -20,7 +20,7 @@ var selected1 = "";
 
 			<div class="pull-right">
 
-				<a  href="${ctxPath}/educationexperience/edit?friendid=${friendid!}" class="btn btn-default" data-id="dialog_educationexperience_edit" data-toggle="dialog"
+				<a  href="/educationexperience/edit?friendid=${friendid!}" class="btn btn-default" data-id="dialog_educationexperience_edit" data-toggle="dialog"
 					data-width="500" data-height="300"  data-mask="true" data-on-close="jyjl_refresh">添加</a>
 
 
@@ -100,10 +100,10 @@ var selected1 = "";
             </td>
 
 				<td>
-					<a  href="${ctxPath}/educationexperience/edit?id=${obj.id!}" class="btn btn-default" data-id="tab_educationexperience_edit" data-toggle="dialog"
+					<a  href="/educationexperience/edit?id=${obj.id!}" class="btn btn-default" data-id="tab_educationexperience_edit" data-toggle="dialog"
 						data-width="500" data-height="300"  data-mask="true" data-on-close="jyjl_refresh">编辑</a>
 
-					<a href="${ctxPath}/educationexperience/del?id=${obj.id!}" class="btn btn-red" data-toggle="doajax"
+					<a href="/educationexperience/del?id=${obj.id!}" class="btn btn-red" data-toggle="doajax"
 					   data-confirm-msg="确定要删除该行信息吗？" data-callback="jyjl_refresh">删</a>
 
 				</td>

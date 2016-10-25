@@ -4,7 +4,7 @@ var selected1 = "";
 %>
 
 <div class="bjui-pageHeader">
-	<form id="pagerForm" data-toggle="ajaxsearch" action="${ctxPath}/jinengpj?friendid=${friendid!}" method="post">
+	<form id="pagerForm" data-toggle="ajaxsearch" action="/jinengpj?friendid=${friendid!}" method="post">
 
 
 		<input type="hidden" name="pageSize" value="${page.pageSize}" />
@@ -20,7 +20,7 @@ var selected1 = "";
 
 			<div class="pull-right">
 
-				<a  href="${ctxPath}/jinengpj/edit?friendid=${friendid!}" class="btn btn-default" data-id="dialog_jinengpj_edit" data-toggle="dialog"
+				<a  href="/jinengpj/edit?friendid=${friendid!}" class="btn btn-default" data-id="dialog_jinengpj_edit" data-toggle="dialog"
 					data-width="500" data-height="300"  data-mask="true" data-on-click="jnpg_refresh">添加</a>
 
 				&nbsp;&nbsp;
@@ -75,10 +75,10 @@ var selected1 = "";
 			</td>
 
 				<td>
-					<a  href="${ctxPath}/jinengpj/edit?id=${obj.id!}" class="btn btn-default" data-id="tab_jinengpj_edit" data-toggle="dialog"
+					<a  href="/jinengpj/edit?id=${obj.id!}" class="btn btn-default" data-id="tab_jinengpj_edit" data-toggle="dialog"
 						data-width="500" data-height="300"  data-mask="true" data-on-click="jnpg_refresh">编辑</a>
 
-					<a href="${ctxPath}/jinengpj/del?id=${obj.id!}" class="btn btn-red" data-toggle="doajax"
+					<a href="/jinengpj/del?id=${obj.id!}" class="btn btn-red" data-toggle="doajax"
 					   data-confirm-msg="确定要删除该行信息吗？" data-callback="jnpg_refresh">删</a>
 
 				</td>
