@@ -74,6 +74,7 @@ public class XmjinyanAction {
         if (xmjinyan.getId() == null || xmjinyan.getId() == 0) {
             rtnObject = xmjinyanService.dao().insert(xmjinyan);
         }else{
+            xmjinyan.setFriendid(null);
             rtnObject = xmjinyanService.dao().updateIgnoreNull(xmjinyan);
         }
         CacheManager.getInstance().getCache(XmjinyanService.CACHE_NAME).removeAll();

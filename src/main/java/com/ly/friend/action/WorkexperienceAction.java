@@ -76,6 +76,7 @@ public class WorkexperienceAction {
         if (workexperience.getId() == null || workexperience.getId() == 0) {
             rtnObject = workexperienceService.dao().insert(workexperience);
         }else{
+            workexperience.setFriendid(null);
             rtnObject = workexperienceService.dao().updateIgnoreNull(workexperience);
         }
         CacheManager.getInstance().getCache(WorkexperienceService.CACHE_NAME).removeAll();

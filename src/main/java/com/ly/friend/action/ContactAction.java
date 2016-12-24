@@ -77,6 +77,7 @@ public class ContactAction {
         if (contact.getId() == null || contact.getId() == 0) {
             rtnObject = contactService.dao().insert(contact);
         }else{
+            contact.setFriendid(null);
             rtnObject = contactService.dao().updateIgnoreNull(contact);
         }
         CacheManager.getInstance().getCache(ContactService.CACHE_NAME).removeAll();

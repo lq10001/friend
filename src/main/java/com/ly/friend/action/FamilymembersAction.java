@@ -76,6 +76,8 @@ public class FamilymembersAction {
         if (familymembers.getId() == null || familymembers.getId() == 0) {
             rtnObject = familymembersService.dao().insert(familymembers);
         }else{
+            familymembers.setFriendid(null);
+
             rtnObject = familymembersService.dao().updateIgnoreNull(familymembers);
         }
         CacheManager.getInstance().getCache(FamilymembersService.CACHE_NAME).removeAll();

@@ -76,6 +76,8 @@ public class JinengpjAction {
         if (jinengpj.getId() == null || jinengpj.getId() == 0) {
             rtnObject = jinengpjService.dao().insert(jinengpj);
         }else{
+//            jinengpj.setFriendid(null);
+
             rtnObject = jinengpjService.dao().updateIgnoreNull(jinengpj);
         }
         CacheManager.getInstance().getCache(JinengpjService.CACHE_NAME).removeAll();

@@ -76,6 +76,7 @@ public class EducationexperienceAction {
         if (educationexperience.getId() == null || educationexperience.getId() == 0) {
             rtnObject = educationexperienceService.dao().insert(educationexperience);
         }else{
+            educationexperience.setFriendid(null);
             rtnObject = educationexperienceService.dao().updateIgnoreNull(educationexperience);
         }
         CacheManager.getInstance().getCache(EducationexperienceService.CACHE_NAME).removeAll();

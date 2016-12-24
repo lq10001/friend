@@ -59,11 +59,13 @@ var ioc = {
 	 * 上传文件用适配器
 	 */
 	uploadFile : {
-		type : 'org.nutz.mvc.upload.UploadAdaptor',
-		singleton : false,
-		args : [ {
-			refer : 'uploadFileContext'
-		} ]
+		type: 'org.nutz.mvc.upload.UploadAdaptor',
+		singleton: false,
+		args: [{
+			refer: 'uploadFileContext'
+		}]
 	}
+
+
 
 };
