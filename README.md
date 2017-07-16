@@ -5,12 +5,13 @@
 
 ## 产品预览图：
 1 朋友圈
-
+![输入图片说明](https://git.oschina.net/uploads/images/2017/0716/083828_b5eecffe_3018.png "屏幕截图.png")
 2 交往记录
-
+![输入图片说明](https://git.oschina.net/uploads/images/2017/0716/083837_fdbdd1cf_3018.png "屏幕截图.png")
 3 统计
 
 4 台账
+![输入图片说明](https://git.oschina.net/uploads/images/2017/0716/083904_d803a016_3018.png "屏幕截图.png")
 
 ## 产品定位
 管理人脉圈
